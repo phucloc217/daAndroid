@@ -3,5 +3,5 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
-    <item android:title="Item" />
+    <item android:title="@string/about_menu" android:id="@+id/mnuAbout" />
 </menu>
