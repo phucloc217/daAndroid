@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"></string>
+    <string name="title_activity_login">Login</string>
+    <string name="login_failed">Wrong Login Information</string>
+    <string name="login_btn">Login</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="about_menu">About</string>
+    <string name="btn_category">Categories</string>
+    <string name="btn_books">Books</string>
+    <string name="tv_qldanhmuc">Categories Manager</string>
+    <string name="btn_them">Save</string>
+    <string name="themDanhmuc">Add</string>
+    <string name="themdanhmuc">Add Category</string>
+    <string name="madanhmuc">"Category ID "</string>
+    <string name="tendanhmuc">Cagegory Name</string>
+    <string name="btnChonHinh">Choose Image</string>
+    <string name="maSach">Book ID</string>
+    <string name="TenSach">Book Name</string>
+    <string name="Mota">Description</string>
+    <string name="qlsach">Book Manager</string>
+    <string name="mnuThoat">Exit</string>
+</resources>

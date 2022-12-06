@@ -129,6 +129,21 @@ DatabaseHandler databaseHandler =new DatabaseHandler(this);
                         Intent intent = new Intent(CategoryActivity.this,AddCategoryActivity.class);
                         resultLauncher.launch(intent);
                 break;
+            case R.id.item_About:
+                Intent intent2 = new Intent(CategoryActivity.this,AboutActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.item_Thoat:
+                //Khoi tao lai Activity main
+                Intent intent1 = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent1);
+
+                // Tao su kien ket thuc app
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startActivity(startMain);
+                finish();
+                break;
             default:
                 break;
         }

@@ -4,5 +4,10 @@
     <item
         android:id="@+id/item_themDM"
         android:title="@string/themDanhmuc" />
-    <item android:title="Thoát" />
+    <item
+        android:id="@+id/item_About"
+        android:title="@string/about_menu" />
+    <item
+        android:id="@+id/item_Thoat"
+        android:title="@string/mnuThoat" />
 </menu>

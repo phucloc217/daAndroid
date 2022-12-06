@@ -114,16 +114,16 @@ public class BookActivity extends AppCompatActivity {
         databaseHandler.close();
         Toast.makeText(BookActivity.this, "Xóa thành công " + sach.getTenSach(), Toast.LENGTH_SHORT).show();
 
-        dstl.remove(sach);
+        dssach.remove(sach);
         adapter.notifyDataSetChanged();
-
     }
 
     private void xuLySua(int i) {
         sach=dssach.get(i);
-        Intent intent= new Intent(BookActivity.this, AddBookActivity.class);
-        intent.putExtra("CHON",sach);
+        Intent intent = new Intent(BookActivity.this, AddBookActivity.class);
+        intent.putExtra("CHON", sach);
         resultLauncher.launch(intent);
+
     }
     ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -159,6 +159,21 @@ public class BookActivity extends AppCompatActivity {
             case R.id.item_themDM:
                 Intent intent = new Intent(BookActivity.this,AddBookActivity.class);
                 resultLauncher.launch(intent);
+                break;
+            case R.id.item_About:
+                Intent intent2 = new Intent(BookActivity.this,AboutActivity.class);
+                startActivity(intent2);
+                break;
+            case R.id.item_Thoat:
+                //Khoi tao lai Activity main
+                Intent intent1 = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent1);
+
+                // Tao su kien ket thuc app
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startActivity(startMain);
+                finish();
                 break;
             default:
                 break;

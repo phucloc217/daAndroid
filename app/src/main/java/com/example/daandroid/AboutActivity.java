@@ -1,54 +1,40 @@
 package com.example.daandroid;
 
-import static java.security.AccessController.getContext;
+import static android.Manifest.permission.CALL_PHONE;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
-import com.example.daandroid.utls.DatabaseHandler;
-
-public class MainActivity extends AppCompatActivity {
-    Button btnCategory;
-    Button btnBooks;
-
+public class AboutActivity extends AppCompatActivity {
+    TextView tvSDT;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        addControls();
-        addEvents();
-       // DatabaseHandler databaseHandler = new DatabaseHandler(this);
-
-    }
-
-    private void addEvents() {
-        btnCategory.setOnClickListener(new View.OnClickListener() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_about);
+        tvSDT = findViewById(R.id.tvSDT);
+        tvSDT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
-                startActivity(intent);
-            }
-        });
-        btnBooks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, BookActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:"+"0384731507"));
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    startActivity(intent);
+                } else {
+                    requestPermissions(new String[]{CALL_PHONE}, 1);
+                }
             }
         });
     }
-
-    private void addControls() {
-        btnCategory = findViewById(R.id.btn_category);
-        btnBooks = findViewById(R.id.btn_Books);
-    }
-
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.option_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -57,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mnuAbout:
-                Intent intent = new Intent(MainActivity.this,AboutActivity.class);
-                startActivity(intent);
+
                 break;
             case R.id.mnuThoat:
                 //Khoi tao lai Activity main

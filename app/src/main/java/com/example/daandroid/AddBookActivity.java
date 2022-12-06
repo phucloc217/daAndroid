@@ -4,6 +4,7 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -15,6 +16,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -52,6 +55,7 @@ public class AddBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_book);
         addControls();
         xulyChonViTriSpinner();
+        getDataFromIntent();
         addEvents();
     }
 
@@ -88,10 +92,17 @@ public class AddBookActivity extends AppCompatActivity {
         btnLuu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                xulyThem();
+              if(sach==null)
+                  xulyThem();
+              else
+                  xuLySua();
             }
         });
     }
+
+    private void xuLySua() {
+    }
+
     private void getDataFromIntent() {
         Intent intent = getIntent();
         if (intent.hasExtra("CHON")) {
@@ -100,7 +111,9 @@ public class AddBookActivity extends AppCompatActivity {
             etMa.setText(sach.getMaSach()+"");
             etGia.setText(sach.getGia()+"");
             etMota.setText(sach.getMoTa());
-
+            spinner.setSelection(getPosition(spinner, String.valueOf(sach.getTheLoai().getMaLoai())));
+            Bitmap bitmap = BitmapFactory.decodeByteArray(sach.getHinh(), 0, sach.getHinh().length);
+            ivHinh.setImageBitmap(bitmap);
             etMa.setEnabled(false);
         }
     }
@@ -187,5 +200,32 @@ public class AddBookActivity extends AppCompatActivity {
         databaseHandler.close();
         setResult(Activity.RESULT_OK, intent);
         finish();
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.option_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mnuAbout:
+                Intent intent = new Intent(AddBookActivity.this,AboutActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.mnuThoat:
+                //Khoi tao lai Activity main
+                Intent intent1 = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent1);
+
+                // Tao su kien ket thuc app
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startActivity(startMain);
+                finish();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name" translatable="false"></string>
     <string name="title_activity_login">Đăng nhập</string>
     <string name="login_failed">Sai thông tin đăng nhập</string>
     <string name="login_btn">Đăng nhập</string>
     <string name="username_hint">Tên đăng nhập</string>
     <string name="password_hint">Mật khẩu</string>
     <string name="about_menu">Giới thiệu</string>
-    <string name="todo">TODO</string>
+    <string name="todo" translatable="false">TODO</string>
     <string name="btn_category">Danh mục</string>
     <string name="btn_books">Sách</string>
     <string name="tv_qldanhmuc">QUẢN LÝ DANH MỤC</string>
@@ -20,4 +20,5 @@
     <string name="TenSach">Tên sách</string>
     <string name="Mota">Mô tả</string>
     <string name="qlsach">Quản lý sách</string>
+    <string name="mnuThoat">Thoát</string>
 </resources>
