@@ -1,22 +1,27 @@
 package com.example.daandroid.models;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
-public class Sach {
+public class Sach implements Serializable {
     int MaSach;
     String TenSach;
     String MoTa;
     int Gia;
-    Blob Hinh;
+    byte[] Hinh;
     TheLoai theLoai;
 
-    public Sach(int maSach, String tenSach, String moTa, int gia, Blob hinh, TheLoai theLoai) {
+    public Sach(int maSach, String tenSach, String moTa, int gia, byte[] hinh, TheLoai theLoai) {
         MaSach = maSach;
         TenSach = tenSach;
         MoTa = moTa;
         Gia = gia;
         Hinh = hinh;
         this.theLoai = theLoai;
+    }
+
+    public Sach() {
+
     }
 
     public int getMaSach() {
@@ -51,11 +56,11 @@ public class Sach {
         Gia = gia;
     }
 
-    public Blob getHinh() {
+    public byte[] getHinh() {
         return Hinh;
     }
 
-    public void setHinh(Blob hinh) {
+    public void setHinh(byte[] hinh) {
         Hinh = hinh;
     }
 

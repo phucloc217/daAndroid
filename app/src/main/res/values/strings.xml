@@ -15,4 +15,9 @@
     <string name="themdanhmuc">Thêm danh mục</string>
     <string name="madanhmuc">Mã danh mục</string>
     <string name="tendanhmuc">Tên Danh mục</string>
+    <string name="btnChonHinh">Chọn hình</string>
+    <string name="maSach">Mã sách</string>
+    <string name="TenSach">Tên sách</string>
+    <string name="Mota">Mô tả</string>
+    <string name="qlsach">Quản lý sách</string>
 </resources>

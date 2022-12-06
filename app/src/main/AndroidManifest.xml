@@ -17,6 +17,20 @@
         android:theme="@style/Theme.DaAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".BookActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AddBookActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AddCategoryActivity"
             android:exported="false">
             <meta-data

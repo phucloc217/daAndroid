@@ -35,10 +35,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BookActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void addControls() {
         btnCategory = findViewById(R.id.btn_category);
+        btnBooks = findViewById(R.id.btn_Books);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
