@@ -121,7 +121,8 @@ public class BookActivity extends AppCompatActivity {
     private void xuLySua(int i) {
         sach=dssach.get(i);
         Intent intent = new Intent(BookActivity.this, AddBookActivity.class);
-        intent.putExtra("CHON", sach);
+        //intent.putExtra("CHON", sach);
+        intent.putExtra("CHON",sach);
         resultLauncher.launch(intent);
 
     }
@@ -141,7 +142,7 @@ public class BookActivity extends AppCompatActivity {
                             sach.setTenSach(tl.getTenSach());
                             sach.setMoTa(tl.getMoTa());
                             sach.setGia(tl.getGia());
-                            sach.setHinh(tl.getHinh());
+                            //sach.setHinh(tl.getHinh());
                             sach.setTheLoai(tl.getTheLoai());
                             adapter.notifyDataSetChanged();
                         }

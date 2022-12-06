@@ -149,12 +149,24 @@ public class AddBookActivity extends AppCompatActivity {
                             Uri imageUri = data.getData();
                             InputStream i = getContentResolver().openInputStream(imageUri);
                             Bitmap bitmap = BitmapFactory.decodeStream(i);
-                            ivHinh.setImageBitmap(bitmap);
+
+                            ivHinh.setImageBitmap(compress(bitmap));
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         }
                 }
             });
+    public Bitmap compress(Bitmap yourBitmap){
+        //converted into webp into lowest quality
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        yourBitmap.compress(Bitmap.CompressFormat.WEBP,0,stream);//0=lowest, 100=highest quality
+        byte[] byteArray = stream.toByteArray();
+
+
+        //convert your byteArray into bitmap
+        Bitmap yourCompressBitmap = BitmapFactory.decodeByteArray(byteArray,0,byteArray.length);
+        return yourCompressBitmap;
+    }
     private int getPosition(Spinner sp, String chuoi) {
         for (int i = 0; i < sp.getCount(); i++) {
             if (sp.getItemAtPosition(i).toString().equalsIgnoreCase(chuoi)) {
