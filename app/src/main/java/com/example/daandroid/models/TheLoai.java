@@ -1,16 +1,20 @@
 package com.example.daandroid.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TheLoai {
+public class TheLoai implements Serializable {
     int MaLoai;
     String TenTheLoai;
-    ArrayList<Sach> DsSach;
+   // ArrayList<Sach> DsSach;
 
-    public TheLoai(int maLoai, String tenTheLoai, ArrayList<Sach> dsSach) {
+    public TheLoai(int maLoai, String tenTheLoai) {
         MaLoai = maLoai;
         TenTheLoai = tenTheLoai;
-        DsSach = dsSach;
+       // DsSach = dsSach;
+    }
+
+    public TheLoai() {
     }
 
     public int getMaLoai() {
@@ -29,11 +33,16 @@ public class TheLoai {
         TenTheLoai = tenTheLoai;
     }
 
-    public ArrayList<Sach> getDsSach() {
-        return DsSach;
-    }
+//    public ArrayList<Sach> getDsSach() {
+//        return DsSach;
+//    }
 
-    public void setDsSach(ArrayList<Sach> dsSach) {
-        DsSach = dsSach;
+//    public void setDsSach(ArrayList<Sach> dsSach) {
+//        DsSach = dsSach;
+//    }
+    public String toString() {
+        return
+                "Mã thể loại: " + MaLoai + '\n' +
+                        "Tên thể loại: " + TenTheLoai + '\n';
     }
 }

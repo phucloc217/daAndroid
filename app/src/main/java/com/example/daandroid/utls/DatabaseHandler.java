@@ -21,7 +21,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String create_categories_table = "CREATE TABLE loaisach(id INTEGER PRIMARY KEY, tenloai TEXT)";
+        String create_categories_table = "CREATE TABLE theloai(id INTEGER PRIMARY KEY, tenloai TEXT)";
         String create_books_table = "CREATE TABLE sach(id INTEGER PRIMARY KEY, tensach TEXT, mota TEXT, gia INTEGER, hinh BLOB, maloai INTEGER,FOREIGN KEY(maloai) REFERENCES sach(id))";
         sqLiteDatabase.execSQL(create_categories_table);
         sqLiteDatabase.execSQL(create_books_table);

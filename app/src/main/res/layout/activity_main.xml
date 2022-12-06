@@ -7,11 +7,26 @@
     android:background="@color/white"
 
     tools:context=".MainActivity">
-    <ListView
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/lvCategory"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_category"
+        android:text="@string/btn_category"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint ="#1DDE7D"
+        android:textColor="@color/white"
         />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_books"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_category"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint ="#1DDE7D"
+        android:textColor="@color/white"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

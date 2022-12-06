@@ -6,4 +6,13 @@
     <string name="username_hint">Tên đăng nhập</string>
     <string name="password_hint">Mật khẩu</string>
     <string name="about_menu">Giới thiệu</string>
+    <string name="todo">TODO</string>
+    <string name="btn_category">Danh mục</string>
+    <string name="btn_books">Sách</string>
+    <string name="tv_qldanhmuc">QUẢN LÝ DANH MỤC</string>
+    <string name="btn_them">Lưu</string>
+    <string name="themDanhmuc">Thêm</string>
+    <string name="themdanhmuc">Thêm danh mục</string>
+    <string name="madanhmuc">Mã danh mục</string>
+    <string name="tendanhmuc">Tên Danh mục</string>
 </resources>
